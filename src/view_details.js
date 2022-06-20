@@ -3,9 +3,9 @@ import "./App.css"
 import Moment from 'moment';
 
 function ViewDetails(){
-
-    const dataUrl = "http://localhost:3000/images/1";
     
+    const dataUrl = "http://localhost:3000/deceased_posts?start=1&end=5";
+
     Moment.locale('en');
     
     const [deceased, setDeceased] = useState([]);
@@ -26,13 +26,15 @@ function ViewDetails(){
     }
     return(
         <div className='App-header'>
-            <img src={deceased.url} alt="guy"/>
-            {/* <h1>{deceased.name}, {deceased.age}</h1> */}
-            <div>
-                {/* <h5>Date of Birth: {Moment(deceased.created_at).format('Do MMMM YYYY')}</h5>
-                <h5>Description: {deceased.description}</h5> */}
-                <hr/>
-            </div>
+            <h1>View Deceased Info</h1>
+            {deceased.map((value) => (
+                <div>
+                    <h2>{value.name}, {value.age}</h2>
+                    <h5>Date of Birth: {Moment(value.created_at).format('Do MMMM YYYY')}</h5>
+                    <h5>Description: {value.description}</h5>
+                    <hr/>
+                </div>
+            ))}
         </div>
     );
 }

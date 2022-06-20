@@ -1,6 +1,7 @@
 import React from "react";
 import ViewDetails from "./view_details"
 import NewDetails from "./new_deceased"
+import AddDeceased from "./add_deceased"
 import {
   Routes,
   Route
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<ViewDetails/>}/>
         <Route exact path="/new" element={<NewDetails/>}/>
+        <Route exact path="/add" element={<AddDeceased/>}/>
       </Routes>
     </div>
   );
