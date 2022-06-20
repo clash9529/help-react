@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/deceased_posts/1"
+  "proxy": "http://localhost:3000"
 }

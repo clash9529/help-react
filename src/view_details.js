@@ -3,9 +3,9 @@ import "./App.css"
 import Moment from 'moment';
 
 function ViewDetails(){
-    // const dataUrl = "https://jsonplaceholder.typicode.com/users";
 
-    const dataUrl = "http://localhost:5000//deceased_posts/1";
+    const dataUrl = "http://localhost:3000/images/1";
+    
     Moment.locale('en');
     
     const [deceased, setDeceased] = useState([]);
@@ -26,10 +26,11 @@ function ViewDetails(){
     }
     return(
         <div className='App-header'>
-            <h1>{deceased.name}, {deceased.age}</h1>
+            <img src={deceased.url} alt="guy"/>
+            {/* <h1>{deceased.name}, {deceased.age}</h1> */}
             <div>
-                <h5>Date of Birth: {Moment(deceased.created_at).format('Do MMMM YYYY')}</h5>
-                <h5>Description: {deceased.description}</h5>
+                {/* <h5>Date of Birth: {Moment(deceased.created_at).format('Do MMMM YYYY')}</h5>
+                <h5>Description: {deceased.description}</h5> */}
                 <hr/>
             </div>
         </div>
