@@ -8,7 +8,12 @@ import LabelBottomNavigation from "./BottomNavigation.js";
 import {BreakpointProvider, Breakpoint} from "react-socks";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import successToast from "./SuccessToast.js";
+import AddDeceased from "./addDeceased.js";
 import './App.css';
+import * as PropTypes from "prop-types";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+export const SERVER_URL = 'http://10.16.33.253:3000'
 
 function DeceasedInfoPage() {
   return (<div className="subblock-middle">
@@ -16,7 +21,7 @@ function DeceasedInfoPage() {
   <div className="box-middle"> 
       <Deceased /> 
   </div>
-  <FloatingActionButtons className="fab"/>
+  <FloatingActionButtons className="fab" />
   <div className="box-bottom">
     <LabelBottomNavigation style={"display: none"}/>
   </div>
@@ -35,6 +40,7 @@ function DetailedInfoPage() {
 </div>);
 }
 
+
 function App() {
   return (
     <body>
@@ -52,7 +58,14 @@ function App() {
             </div>
         </div>
 
-       <DeceasedInfoPage /> 
+        <Router>
+          <Routes>
+            <Route exact path="/deceased_posts" element={<DeceasedInfoPage />} />
+            <Route exact path="/deceased_posts/add" element={<AddDeceased />} />
+          </Routes>
+
+        </Router>
+        {/*<DeceasedInfoPage />*/}
 
         <div className="subblock-right">
           <div className="right-bar"></div>
