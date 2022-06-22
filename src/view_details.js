@@ -4,7 +4,7 @@ import Moment from 'moment';
 
 function ViewDetails(){
     
-    const dataUrl = "http://localhost:3000/deceased_posts?start=1&end=5";
+    const dataUrl = "http://10.16.33.253:3000/deceased_posts?start=1&end=4";
 
     Moment.locale('en');
     
@@ -35,6 +35,12 @@ function ViewDetails(){
                     <hr/>
                 </div>
             ))}
+            {/* <div>
+                <h2>{deceased.name}, {deceased.age}</h2>
+                <h5>Date of Birth: {Moment(deceased.created_at).format('Do MMMM YYYY')}</h5>
+                <h5>Description: {deceased.description}</h5>
+                <hr/>
+            </div> */}
         </div>
     );
 }
